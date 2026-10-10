@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Campus Circle — Find people for casual activities</title>
+    <!-- CSS lives in its own file so styling stays separate from structure -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="logo" href="#home">Campus Circle</a>
+      <nav>
+        <a href="#home">Activities</a>
+        <a href="#create">Post an activity</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Homepage intro -->
+      <section id="home" class="hero">
+        <p class="eyebrow">For college students</p>
+        <h1>Find people for golf, studying, drawing, and more.</h1>
+        <p class="lede">
+          Browse open hangouts on campus, join one that fits, or post your own.
+          Sample data only — no accounts required.
+        </p>
+      </section>
+
+      <!-- Create Activity form -->
+      <section id="create" class="create-section">
+        <h2>Create an activity</h2>
+        <p class="section-note">
+          Fill this out and it will show up in the list below right away.
+        </p>
+
+        <form id="activity-form">
+          <label>
+            Activity name
+            <input type="text" name="name" required placeholder="Evening study group" />
+          </label>
+
+          <label class="full">
+            Description
+            <textarea
+              name="description"
+              required
+              rows="3"
+              placeholder="What will you do, and who is it for?"
+            ></textarea>
+          </label>
+
+          <label>
+            Date
+            <input type="date" name="date" required />
+          </label>
+
+          <label>
+            Time
+            <input type="time" name="time" required />
+          </label>
+
+          <label>
+            Location
+            <input type="text" name="location" required placeholder="Library, 2nd floor" />
+          </label>
+
+          <label>
+            Category
+            <select name="category" required>
+              <option value="">Choose one</option>
+              <option value="Sports">Sports</option>
+              <option value="Study">Study</option>
+              <option value="Art">Art</option>
+              <option value="Movies">Movies</option>
+              <option value="Other">Other</option>
+            </select>
+          </label>
+
+          <label>
+            Max participants
+            <input type="number" name="maxParticipants" required min="2" max="50" value="8" />
+          </label>
+
+          <button type="submit" class="btn btn-primary full">Post activity</button>
+        </form>
+      </section>
+
+      <!-- Activity listings: JavaScript will fill this container with cards -->
+      <section id="listings" class="listings-section">
+        <h2>Available activities</h2>
+        <div id="activity-list" class="card-grid"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Campus Circle prototype · sample activities only</p>
+    </footer>
+
+    <!-- JavaScript runs last so the HTML already exists when the script looks for it -->
+    <script src="script.js"></script>
+  </body>
+</html>
